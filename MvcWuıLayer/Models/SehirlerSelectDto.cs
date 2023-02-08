@@ -4,7 +4,6 @@ namespace MvcWuıLayer.Models
 {
     public class SehirlerSelectDto
     {
-
         public int id { get; set; }
         public string sehirKodu { get; set; }
         public string sehirAdi { get; set; }
