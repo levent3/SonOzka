@@ -30,31 +30,29 @@ namespace MvcWuıLayer.Controllers
             {
                 //var result = await response.Content.ReadAsStringAsync();
                 var result = await response.Result.Content.ReadAsStringAsync();
-                var sonuc = JsonSerializer.Deserialize<ICollection<SehirlerDto>>(result);
+                var selectDto = JsonSerializer.Deserialize<ICollection<SehirlerSelectDto>>(result);
+                //var sehirlerVM = JsonSerializer.Deserialize<ICollection<SehirlerDto>>(result);
+
+
+                //for (int i = 0; i < GelenSonuc.Count; i++)
+                //{
+
+                //}
 
 
                 //foreach (var item in sonuc)
                 //{
-                //    var response2 = httpClient2.GetAsync(ulke + "/" + item.ulkeId);
-                //    var resul2 = await response2.Result.Content.ReadAsStringAsync();
-                //    var sonuc2 = JsonSerializer.Deserialize<ICollection<UlkeSelectDto>>(resul2);
+                //    //var response2 = httpClient2.GetAsync(ulke + "/" + item.ulkeId);
+                //    //var resul2 = await response2.Result.Content.ReadAsStringAsync();
+                //    //var sonuc2 = JsonSerializer.Deserialize<ICollection<UlkeSelectDto>>(resul2);
 
-                //    foreach (var item2 in sonuc2)
-                //    {
-                //        if (item.ulkeAdi == item2.ulkeAdi)
-                //        {
-                //            item.ulkeAdi = item2.ulkeAdi;
-                //        }
-                //        else
-                //        {
-                //            item.ulkeAdi = null;
-                //        }
-                //    }
+
                 //    return View(sonuc);
                 //}
 
-                return View(sonuc);
+                return View(selectDto);
             }
+
             return View();
 
 

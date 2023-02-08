@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SehirlerDto>
+﻿@model IEnumerable<SehirlerSelectDto>
 
 
 
@@ -24,7 +24,7 @@
                     <tr>
                         <td>@item.id</td>
                         <td>@item.sehirAdi</td>
-                        <td>@item.ulkeAdi</td>
+                        <td>@item.ulke.ulkeAdi</td>
                         <td><a class="btn btn-info" asp-action="Update" asp-controller="Sehir" asp-route-id="@item.id">Update</a></td>
                         <td><a class="btn btn-danger" asp-action="Delete" asp-controller="Sehir" asp-route-id="@item.id">Delete</a></td>
                     </tr>
