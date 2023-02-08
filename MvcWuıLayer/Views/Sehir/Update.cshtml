@@ -1,0 +1,43 @@
+﻿@model SehirUpdateDto
+<div class="card">
+    <div class="card-header">
+        <h3>@Model.SehirAdi Sehrini Güncelle</h3>
+        <div class="card-header">
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        </div>
+    </div>
+    <div class="card-body">
+        <form asp-action="Update" asp-controller="Sehir" method="post">
+            <input type="text" asp-for="SehirId" class="form-control" hidden>
+
+            <div class="input-group mb-3">
+                <input type="text" asp-for="SehirKodu" class="form-control" placeholder="SehirKodu" autocomplete="off">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope text-danger" asp-validation-for="SehirKodu"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" asp-for="SehirAdi" class="form-control" placeholder="Sehiradi" autocomplete="off">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope text-danger" asp-validation-for="SehirAdi"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <select asp-for="UlkeId" asp-items="@ViewBag.UlkeListItems">
+                </select>
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope text-danger" asp-validation-for="UlkeId"></span>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" value="Kaydet">Kaydet</button>
+        </form>
+    </div>
+</div>
